@@ -1,8 +1,8 @@
 define (require, exports, module) ->
 
-  Backbone = require('backbone')
+  # Batman       = require('batman')
 
-  class Widget extends Backbone.Model
+  class Widget extends Batman.Model
 
     fooBar: ->
       "#{@foo()}#{@bar()}"

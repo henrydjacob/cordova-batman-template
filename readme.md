@@ -1,14 +1,10 @@
-# Cordova Backbone Template (v0.3.0)
-
-[![Build Status](https://travis-ci.org/holidayextras/cordova-backbone-template.png)](https://travis-ci.org/holidayextras/cordova-backbone-template)
+# Cordova Batman Template (v0.1.0)
 
 ## What is it?
 
 This goal of this repository is to jump start you past all the complexity of setting up a Cordova app and project workflow. You should be able to download, compile and run the project on iOS or Android in a few commands, and easily get developing and making changes using JavasScript and Backbone.js straight away.
 
-We've chosen Backbone for this template project as it's **1.** simple, **2.** well documented, **3.** widely used and **4.** not too heavily prescribed in terms of application architecture/best practices. It's also what I'm most familiar with...
-
-As it comes, this project also uses Coffeescript (which is auto-converted to JS by a grunt task) because we feel it's nicer to write object-oriented web applications in. If you don't want to use it, see the section below on removing it.
+This is based on cordova-backbone-template and cordova-project-template
 
 ## Installation/Running
 
@@ -100,7 +96,7 @@ With `grunt server` running, you can also access your tests at `http://localhost
  * Coffeescript
  * Less
  * RequireJs
- * Backbone
+ * Batan
  * JQuery
  * Underscore
  * HammerJS
@@ -121,16 +117,6 @@ Use `bower` for libraries and modules you want to be available in your applicati
 
 For any bower components you want to use in your project, you'll need to configure them for use with requirejs, to do this. Add them to your `assets/javascripts/app/require_config.coffee` file. If you're struggling with this, [read up on how requirejs works](http://requirejs.org/).
 
-
-## Working without Coffeescript
-
-If you don't want to use coffeescript, you can replace the `coffee` task in your project's `Gruntfile.coffee` with a `copy` task to copy across your .js files instead.
-
-For more info, see the [grunt-contrib-copy](https://github.com/gruntjs/grunt-contrib-copy) project, or copy and modify an existing `copy` task from this project's gruntfile.
-
-## Projects built from this template
-
-* [The Holiday Extras App](https://play.google.com/store/apps/details?id=com.HolidayExtras.Tripapp)
 
 ## Thanks
 

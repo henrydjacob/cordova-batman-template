@@ -1,9 +1,12 @@
 require [
   'widget_app'
+  'controllers/posts_controller'
 ], (WidgetApp) ->
 
   startApp = ->
-    window.app = new WidgetApp
+    (global ? window).WidgetApp = WidgetApp
+    # window.WidgetApp = WidgetApp
+    WidgetApp.run()
 
   # When running throuhg cordova, we should listen to the deviceready
   # event before starting up, in desktop browsers we don't care...

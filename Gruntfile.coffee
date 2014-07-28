@@ -79,6 +79,16 @@ config = (grunt) ->
       options:
         beautify: true
 
+  batman_templates: {
+    options: {
+      templateFolder: 'assets/javascripts/app/html'
+    },
+    files: {
+      src: 'assets/javascripts/app/html/**/*.html'
+      dest: 'assets/javascripts/app/html/tmpl.coffee'
+    }
+  }
+
   mocha_phantomjs:
     options:
       reporter: 'dot'
@@ -88,17 +98,24 @@ config = (grunt) ->
     coffee:
       files: ['assets/javascripts/**']
       tasks: ['coffee']
+
     less:
       files: ['assets/stylesheets/**/*.less']
       tasks: ['less']
       options:
         spawn: true
+
     img:
       files: ['assets/img/**/*']
       tasks: ['copy:img']
+
     htmlbuild:
       files: ['assets/public/**/*.html']
       tasks: ['htmlbuild']
+
+    batman_templates:
+      files: ['assets/javascripts/app/html/**/*.html']
+      tasks: ['build']
 
 module.exports = (grunt) ->
 
@@ -114,6 +131,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks('grunt-contrib-connect')
   grunt.loadNpmTasks('grunt-mocha-phantomjs')
   grunt.loadNpmTasks('grunt-html-build')
+  grunt.loadNpmTasks('grunt-batman-templates');
 
   grunt.registerTask('default', ['build'])
 
@@ -124,6 +142,7 @@ module.exports = (grunt) ->
     'less'
     'cssmin'
     'htmlbuild'
+    'batman_templates'
   ])
 
   grunt.registerTask('server', [

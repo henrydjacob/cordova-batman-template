@@ -1,39 +1,22 @@
 define (require, exports, module) ->
 
-  # Makes touch events in Backbone easy, see: https://github.com/wookiehangover/backbone.hammer
-  require('hammerjs')
-  require('jquery-hammerjs')
-  require('backbone-hammer')
 
-  _            = require('underscore')
-  $            = require('jquery')
-  Backbone     = require('backbone')
-  WidgetRouter = require('routers/widget_router')
-  Widgets      = require('collections/widgets')
-  WidgetView   = require('views/widget_view')
+  # require('es5-shim')
+  # Batman = require 'batman'
+  $ = require 'jquery'
+  require('batman_jquery')
+  require('batman_rails')
+  require('template')
 
-  ###
-    We'll use this file to boot up our application. It's extending Backbone.View, but
-    isn't really used as a view at all. You'll want to replace all Backbone code in
-    this project with your own, it only exists to show you how requiring various
-    components in the application work together and it not intended to be an example
-    of a well structured or well built application. A sensible application architecture
-    # is up to you, as it's not something Backbone really prescribes.
-  ###
+  # Batman.config.pathToHTML = '/assets/html'
+  # Batman.config.usePushState = false;
 
-  class WidgetApp extends Backbone.View
+  exports = class WidgetApp extends Batman.App
+    @set 'mission', 'fight crime'
 
-    initialize: ->
-      # Create our routers
-      @router = new WidgetRouter
-        app: @
+    @resources 'posts'
 
-      # Create our collections
-      @widgets = new Widgets
+    # Set the root route to ExamplesController#index.
+    @root 'posts#index'
 
-      # Create our views
-      @widgetView = new WidgetView
-        collection: @widgets
-
-      # Start backbone history
-      Backbone.history.start()
+  (global ? window).WidgetApp = WidgetApp
