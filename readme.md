@@ -2,9 +2,9 @@
 
 ## What is it?
 
-This goal of this repository is to jump start you past all the complexity of setting up a Cordova app and project workflow. You should be able to download, compile and run the project on iOS or Android in a few commands, and easily get developing and making changes using JavasScript and Backbone.js straight away.
+This goal of this repository is to jump start you past all the complexity of setting up a Cordova app and project workflow. You should be able to download, compile and run the project on iOS or Android in a few commands, and easily get developing and making changes using JavasScript and Batman.js straight away.
 
-This is based on cordova-backbone-template and cordova-project-template
+This is based on [cordova-backbone-template](https://github.com/holidayextras/cordova-backbone-template) and [cordova-project-template](https://github.com/quickleft/cordova-project-template)
 
 ## Installation/Running
 
